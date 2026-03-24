@@ -13,8 +13,8 @@ COPY src ./src
 # Build the application
 RUN mvn clean package -DskipTests
 
-# Runtime stage
-FROM openjdk:17-jdk-slim
+# Runtime stage - FIXED: Use eclipse-temurin instead of openjdk
+FROM eclipse-temurin:17-jdk-slim
 
 WORKDIR /app
 
